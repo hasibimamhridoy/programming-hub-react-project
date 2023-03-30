@@ -16,16 +16,36 @@ const FetchMainComponent = () => {
 
 
   const handleBookMarked = (blog,id) =>{
+
+    let newBookMarked = []
+
+    const exist = bookMartked.find(pd => pd.id == id)
+
+    if(!exist){
+
+        newBookMarked = [...bookMartked , blog]
+
+    }
+    else{
+
+        alert('Already Added')
+        const remaining = bookMartked.filter(pd => pd.id !== id)
+        newBookMarked = [...remaining,exist]
+
+    }
+
+    setBookMarked(newBookMarked)
  
-  
   }
+
+
 
 
     return (
         <div className='MainSection'>
 
             <Navbar></Navbar>
-            <BlogBookMarked handleBookMarked={handleBookMarked} blogs={blogs}></BlogBookMarked>
+            <BlogBookMarked bookMartkedBlog={bookMartked} handleBookMarked={handleBookMarked} blogs={blogs}></BlogBookMarked>
             
         </div>
     );

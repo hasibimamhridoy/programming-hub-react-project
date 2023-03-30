@@ -2,7 +2,7 @@ import React from "react";
 import Blog from "../Blog/Blog";
 import BookMarked from "../BookMarked/BookMarked";
 
-const BlogBookMarked = ({blogs,handleBookMarked}) => {
+const BlogBookMarked = ({blogs,handleBookMarked,bookMartkedBlog}) => {
   return (
     <div className="blog-bookMartked-Container lg:flex lg:flex-row flex-col lg:mt-5">
       
@@ -11,7 +11,7 @@ const BlogBookMarked = ({blogs,handleBookMarked}) => {
       </div>
 
       <div className="blogContainer lg:w-[35%] w-full flex flex-col items-center">
-        <BookMarked></BookMarked>
+        <BookMarked bookMartkedBlog={bookMartkedBlog} ></BookMarked>
       </div>
 
     </div>

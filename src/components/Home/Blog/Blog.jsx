@@ -7,7 +7,7 @@ const Blog = ({ blogs,handleBookMarked }) => {
   return (
     <div className="space-y-5">
       {blogs.map((blog) => {
-        const { authName, blogCover ,id} = blog;
+        const { authName, blogCover ,id,readTime} = blog;
         return (
           <div key={blog.id} className="card-body p-1 rounded-lg ">
             <div className="coverContainer w-full h-80">
@@ -29,8 +29,8 @@ const Blog = ({ blogs,handleBookMarked }) => {
                   <span className="text-sm">Mar 14 </span>{" "}
                   <span className="text-sm">(4 Days Ago)</span>
                   {/* //Mobile responsive */}
-                  <div className="read lg:hidden">
-                    <span className="text-sm">5 min read</span>
+                  <div onClick={()=>handleBookMarked(blog,id)} className="read lg:hidden">
+                    <span className="text-sm">{readTime}</span>
                     <span className="cursor-pointer ml-4">
                       <FontAwesomeIcon icon={faBookmark} />
                     </span>
@@ -39,7 +39,7 @@ const Blog = ({ blogs,handleBookMarked }) => {
               </div>
 
               <div onClick={()=>handleBookMarked(blog,id)}  className="read lg:block hidden">
-                <span>5 min read</span>{" "}
+                <span>{readTime} min read</span>{" "}
                 <span className="cursor-pointer mx-4">
                   <FontAwesomeIcon icon={faBookmark} />
                 </span>
