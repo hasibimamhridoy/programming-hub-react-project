@@ -29,19 +29,19 @@ const Blog = ({ blogs,handleBookMarked,handleReadTime,isBookMarked }) => {
                   <span className="text-sm">{publishDate} </span>
                   <span className="text-sm">({publishDateAgo} days ago)</span>
                   {/* //Mobile responsive */}
-                  <div onClick={()=>handleBookMarked(blog,id)} className="read lg:hidden">
+                  <div  className="read lg:hidden">
                     <span className="text-sm">{readTime} min read</span>
                     <span className="cursor-pointer ml-4">
-                    <FontAwesomeIcon icon={faBookmark} />
+                    <FontAwesomeIcon onClick={()=>handleBookMarked(blog,id)} icon={faBookmark} />
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div onClick={()=>handleBookMarked(blog,id)}  className="read lg:block hidden">
+              <div   className="read lg:block hidden">
                 <span>{readTime} min read</span>
                 <span className="cursor-pointer mx-4">
-                <FontAwesomeIcon icon={faBookmark} />
+                <FontAwesomeIcon onClick={()=>handleBookMarked(blog,id)} icon={faBookmark} />
                 </span>
               </div>
             </div>

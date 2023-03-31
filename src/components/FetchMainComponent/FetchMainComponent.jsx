@@ -3,6 +3,7 @@ import BlogBookMarked from '../Home/BlogBookMarked/BlogBookMarked';
 import Navbar from '../Navbar/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import QuestionsAndAnswer from '../QuestionAndAnswer/QuestionsAndAnswer';
 
 const FetchMainComponent = () => {
 
@@ -84,6 +85,7 @@ const FetchMainComponent = () => {
 
             <Navbar></Navbar>
             <BlogBookMarked isBookMarked={isBookMarked} readTime={readTime} handleReadTime={handleReadTime} bookMartkedBlog={bookMartked} handleBookMarked={handleBookMarked} blogs={blogs}></BlogBookMarked>
+            <QuestionsAndAnswer></QuestionsAndAnswer>
             
         </div>
     );
