@@ -26,7 +26,7 @@ const FetchMainComponent = () => {
     if(!exist){
 
         newBookMarked = [...bookMartked , blog]
-        toast.success('🦄 Wow so easy!', {
+        toast.success('Bookmarked!', {
             position: "top-right",
             autoClose: 1000,
             hideProgressBar: false,
@@ -40,10 +40,20 @@ const FetchMainComponent = () => {
     }
     else{
 
-        alert('Already Added')
+        toast.error('Already Bookmarked', {
+            position: "top-right",
+            autoClose: 500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+
         const remaining = bookMartked.filter(pd => pd.id !== id)
         newBookMarked = [...remaining,exist]
-
+        
     }
 
     setBookMarked(newBookMarked)
@@ -51,9 +61,17 @@ const FetchMainComponent = () => {
  
   }
 
-
   const handleReadTime = (blog) =>{
-    
+    toast.info('Mark as read', {
+        position: "top-right",
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     let newBookMarked = []
     newBookMarked = [...readTime , blog]
     setReadTime(newBookMarked)
