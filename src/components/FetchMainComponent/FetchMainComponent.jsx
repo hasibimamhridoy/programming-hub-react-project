@@ -63,7 +63,7 @@ const FetchMainComponent = () => {
   }
 
   const handleReadTime = (blog) =>{
-    toast.info('Mark as read', {
+    toast.success('Mark as read', {
         position: "top-right",
         autoClose: 500,
         hideProgressBar: false,

@@ -56,9 +56,9 @@ const Blog = ({ blogs,handleBookMarked,handleReadTime,isBookMarked }) => {
               <span>{blogTag}</span>
             </div>
 
-            <div  onClick={()=>{handleReadTime(blog)}} className="markAsRead cursor-pointer">
-              <h1 className="font-semiboldbold underline text-[#6047EC]">
-                Mark as read
+            <div className="markAsRead ">
+              <h1  className="font-semiboldbold underline text-[#6047EC]">
+                <span className="cursor-pointer" onClick={()=>{handleReadTime(blog)}}> Mark as read </span>
               </h1>
             </div>
             <hr />
